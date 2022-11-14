@@ -49,10 +49,13 @@ public class StringLearning {
 
         System.out.println(str);
 
+        //https://github.com/Daniil1380/lesson07
+
         //до 46-47 минут
 
         str = str.replace('J', 'T'); //Заменил J на T и поместил в переменную (коробку) новую строку
         str = str.replace('T', 'J');
+        str = str.repeat(6);
 
         System.out.println(str);
 
@@ -61,14 +64,45 @@ public class StringLearning {
         System.out.println(str);
         //СТРОКА НЕИЗМЕНЯЕМАЯ
 
+        //Есть строка "Password123456qwerty"
+        //эта строка - пароль от Нетфликса одного известного человека
+        //Вы знаете, что этот пароль не безопасен. Вы хотите его изменить. Вот по какому правилу:
+        //1) заменить "qwerty" на "67tred$32"
+        //2) В начало строки добавить знак "*"
+        //3) цифру 3 заменить на three
+        //4) Повторить пароль два раза
+        //5) Создать из пароля подстроку с 5 символа по последний (sub..)
+        //--------------
+        //6) Добавить в конец пароля длину самого этого пароля. Password -> 8 -> Password8
+        //7) Вставить в середину строки слово "Hello"
 
+        String password = "Password123456qwerty";
+        password = password.replace("qwerty", "67tred$32");
+        password = "*" + password;
+        password = password.replace("3", "three");
+        password = password.repeat(2);
+        password = password.substring(5);
+        System.out.println(password);
 
+        //--------------------
+        int passwordLength = password.length();
+        password = password + passwordLength;
 
+        System.out.println(password);
 
+        //--------------------
 
+        passwordLength = password.length();
 
+        int middle = passwordLength / 2;
 
+        String firstPart = password.substring(0, middle);
+        String secondPart = password.substring(middle);
 
+        System.out.println(firstPart);
+        System.out.println(secondPart);
+
+        System.out.println(firstPart + "Hello" + secondPart);
 
 
 
